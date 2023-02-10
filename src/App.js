@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import StoriesGrid from './components/StoriesGrid';
 
 function App() {
   const [ data, setData ] = useState(null);
@@ -17,6 +18,7 @@ function App() {
     <div className="App">
       <Header/>
       Hello Daily Bruin!
+      <StoriesGrid articles={data.stories}></StoriesGrid>
       <Footer/>
     </div>
   );
