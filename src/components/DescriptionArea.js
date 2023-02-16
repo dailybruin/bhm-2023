@@ -39,6 +39,10 @@ text-align:center;
 font-family: 'Smooch Sans', sans-serif;
 font-size: 13vw;
 color: #387854;
+
+${mediaQueries.mobile} {
+    width: 60vw;
+    font-size: 8px;
 `
 
 const Border = styled.div`
@@ -47,6 +51,11 @@ display: inline-block;
 width: 90%;
 height: 3rem;
 background: #387854;
+
+${mediaQueries.mobile} {
+    width: 60vw;
+    font-size: 8px;
+}
 
 `
 export default function DescriptionText({description_text}) {
