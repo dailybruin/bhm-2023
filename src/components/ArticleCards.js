@@ -79,7 +79,7 @@ export default function ArticleCard(props) {
         font-family: "Smooch Sans", sans-serif;
         padding: 0.5em 0 0.5em 0;
         ${mediaQueries.mobile} {
-          font-size: 30px;
+          font-size: 20px;
         }
       `;
 
@@ -108,7 +108,7 @@ export default function ArticleCard(props) {
         padding: 0.5em 0 0.5em 0;
 
         ${mediaQueries.mobile} {
-          font-size: 18px;
+          font-size: 15px;
         }
       `;
 
@@ -186,7 +186,7 @@ export default function ArticleCard(props) {
         color: inherit;
         font-family: "Smooch Sans", sans-serif;
         ${mediaQueries.mobile} {
-          font-size: 30px;
+          font-size: 20px;
         }
       `;
 
@@ -199,7 +199,7 @@ export default function ArticleCard(props) {
         font-family: "Poppins", sans-serif;
         white-space: pre-line;
         ${mediaQueries.mobile} {
-          font-size: 18px;
+          font-size: 12px;
         }
       `;
     }
@@ -257,7 +257,7 @@ export default function ArticleCard(props) {
         font-family: "Smooch Sans", sans-serif;
 
         ${mediaQueries.mobile} {
-          font-size: 30px;
+          font-size: 18px;
         }
       `;
 
@@ -270,7 +270,7 @@ export default function ArticleCard(props) {
         color: inherit;
         font-family: "Poppins", sans-serif;
         ${mediaQueries.mobile} {
-          font-size: 18px;
+          font-size: 15px;
         }
       `;
     }
