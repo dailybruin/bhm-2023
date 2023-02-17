@@ -4,27 +4,24 @@ import Card from "./ArticleCard";
 
 const OuterContainer = styled.div`
     max-width: 100vw;
-    overflow: visible;
 `;
 
 const Grid = styled.div`
+    width: 90vw;
     display: grid;
     margin: auto;
-    max-width: 100%;
-    grid-template-columns: repeat(3,3fr);
-    overflow: visible;
-    column-gap: 134.88px;
-    row-gap: 108.13px;
-    padding-left: 87.44px;
-    padding-right: 87.44px;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 3em;
+    row-gap: 3em;
+    justify-items: center;
+
     ${mediaQueries.mobile} {
         display: grid;
-        grid-template-columns: repeat(2,4fr);
+        grid-template-columns: repeat(2,1fr);
         margin: auto;
         align-items: center;
-        column-gap: 36.21px;
-        row-gap: 38.96px;
-        padding: 1em;
+        column-gap: 2em;
+        row-gap: 1em;
     }
 `;
 
