@@ -7,6 +7,7 @@ import Landing from './components/landingimage';
 import DescriptionText from './components/DescriptionArea';
 import {CatalogTitle} from './components/DescriptionArea';
 import StoriesGrid from './components/StoriesGrid';
+import RelatedContentGrid from './components/RelatedContentGrid'
 
 
 
@@ -27,6 +28,7 @@ function App() {
       <CatalogTitle title = "Stories"/>
       <StoriesGrid articles={data.stories}></StoriesGrid>
       <CatalogTitle title = "Related Content"/>
+      <RelatedContentGrid related={data.related}/>
       <Footer/>
     </div>
   );
