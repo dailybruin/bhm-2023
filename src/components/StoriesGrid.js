@@ -15,6 +15,15 @@ const Section1 = styled.div`
     column-gap: 1em;
     margin-top: 5em;
     padding-bottom: 1em;
+    ${mediaQueries.mobile} {
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+        margin: auto;
+        margin-top: 2em;
+        align-items: center;
+        row-gap: 1em;
+    }
 `
 
 const Section2 = styled.div`
@@ -32,6 +41,14 @@ const Section2 = styled.div`
     column-gap: 1em;
     row-gap: 1em;
     padding-bottom: 1em;
+    ${mediaQueries.mobile} {
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+        margin: auto;
+        align-items: center;
+        row-gap: 1em;
+    }
 `
 const Section3 = styled.div`
     position: relative;
@@ -44,6 +61,14 @@ const Section3 = styled.div`
     grid-template-columns: .6fr .4fr;
     column-gap: 1em;
     padding-bottom: 1em;
+    ${mediaQueries.mobile} {
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+        margin: auto;
+        align-items: center;
+        row-gap: 1em;
+    }
 `
 const Section4 = styled.div`
     position: relative;
@@ -60,6 +85,15 @@ const Section4 = styled.div`
     column-gap: 1em;
     row-gap: 1em;
     padding-bottom: 7em;
+    ${mediaQueries.mobile} {
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+        margin: auto;
+        margin-top:2em;
+        align-items: center;
+        row-gap: 1em;
+    }
 `
 
 const ContainerOne = styled.div`
@@ -86,6 +120,10 @@ const PullQuote = styled.div`
     color: #387854;
     text-align: left;
     font-family: "Smooch Sans", sans-serif;
+    ${mediaQueries.mobile} {
+        font-size: 35px;
+        text-align: center;
+    }
 `
  const RedBlock = styled.div`
     grid-area: block;
