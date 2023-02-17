@@ -21,7 +21,6 @@ function App() {
       <DescriptionText description_text={data.description_text}/>
       <CatalogTitle title = "Stories"/>
       <CatalogTitle title = "Related Content"/>
-      Hello Daily Bruin!
       <Footer/>
     </div>
   );
