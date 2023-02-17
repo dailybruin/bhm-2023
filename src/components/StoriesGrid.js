@@ -13,7 +13,7 @@ const Section1 = styled.div`
         "card_one  quote";
     grid-template-columns: .4fr .6fr;
     column-gap: 1em;
-    padding-top: 5em;
+    margin-top: 5em;
     padding-bottom: 1em;
 `
 
@@ -59,7 +59,7 @@ const Section4 = styled.div`
     grid-template-columns: 2fr 1fr 2fr;
     column-gap: 1em;
     row-gap: 1em;
-    padding-bottom: 6em;
+    padding-bottom: 7em;
 `
 
 const ContainerOne = styled.div`

@@ -31,7 +31,7 @@ export default function ArticleCard(props) {
       Container = styled.div`
         position: relative;
         margin: auto;
-        box-sizing: border-box;;
+        box-sizing: border-box;
         background-color: #${getBackground(props.color)};
         height: fit-content;
         padding: 1em;
@@ -78,6 +78,9 @@ export default function ArticleCard(props) {
         color: inherit;
         font-family: "Smooch Sans", sans-serif;
         padding: 0.5em 0 0.5em 0;
+        ${mediaQueries.mobile} {
+          font-size: 30px;
+        }
       `;
 
       // TitleText = styled.p`
@@ -103,6 +106,10 @@ export default function ArticleCard(props) {
         margin-top: 5%;
         margin-bottom: 5%;
         padding: 0.5em 0 0.5em 0;
+
+        ${mediaQueries.mobile} {
+          font-size: 18px;
+        }
       `;
 
       // BylineText = styled.p`
@@ -179,7 +186,7 @@ export default function ArticleCard(props) {
         color: inherit;
         font-family: "Smooch Sans", sans-serif;
         ${mediaQueries.mobile} {
-          font-size: 7vh;
+          font-size: 30px;
         }
       `;
 
@@ -191,6 +198,9 @@ export default function ArticleCard(props) {
         color: inherit;
         font-family: "Poppins", sans-serif;
         white-space: pre-line;
+        ${mediaQueries.mobile} {
+          font-size: 18px;
+        }
       `;
     }
     ByLineText = "By\n";
@@ -199,12 +209,13 @@ export default function ArticleCard(props) {
     if (style == "three") {
       Container = styled.div`
         position: relative;
-        width: 350px;
+        /* width: 100%; */
         height: fit-content;
         margin: auto;
         box-sizing: content-box;
         background-color: #${getBackground(props.color)};
         padding: 0.7em;
+
         ${mediaQueries.mobile} {
           width: 80%;
         }
@@ -214,16 +225,19 @@ export default function ArticleCard(props) {
         display: block;
         margin: auto;
         color: #ffffff;
-        line-height: 1em;
-        height: 20%;
+        line-height: 2.5em;
+        ${mediaQueries.mobile} {
+          line-height: 1em;
+          font-size: 30px;
+        }
       `;
 
       ArticleImage = styled.div`
-        position: absolute;
         display: block;
         margin: auto;
         height: 80%;
       `;
+      
       Image = styled.img`
         width: 100%;
         height: 100%;
@@ -235,7 +249,7 @@ export default function ArticleCard(props) {
       Title = styled.a`
         display: block;
         padding-top: 0.5em;
-        font-size: 3.5vh;
+        font-size: 50px;
         font-weight: 600;
         text-align: center;
         text-decoration: none;
@@ -243,18 +257,21 @@ export default function ArticleCard(props) {
         font-family: "Smooch Sans", sans-serif;
 
         ${mediaQueries.mobile} {
-          font-size: 5vh;
+          font-size: 30px;
         }
       `;
 
       ByLine = styled.p`
         display: block;
-        font-size: 1.5vh;
+        font-size: 24px;
         font-weight: 200;
         text-align: center;
         padding-bottom: 0.5em;
         color: inherit;
         font-family: "Poppins", sans-serif;
+        ${mediaQueries.mobile} {
+          font-size: 18px;
+        }
       `;
     }
   }
@@ -267,7 +284,6 @@ export default function ArticleCard(props) {
          <a href={props.article_url}>
             <Image src={props.article_image}></Image>
           </a>
-        {/* <Image src={props.article_image}></Image> */}
         <ArticleInfo>
           <Title href={props.article_url}>
             {props.article_title}

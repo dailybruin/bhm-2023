@@ -1,21 +1,24 @@
 import styled from 'styled-components';
 import { mediaQueries } from '../shared/config';
-import Card from "./ArticleCard";
+import Card from "./ArticleCards";
 
 const OuterContainer = styled.div`
     max-width: 100vw;
+    margin-top: 5em;
+    position: relative;
 `;
 
 const Grid = styled.div`
-    width: 90vw;
-    display: grid;
+    max-width: 90vw;
     margin: auto;
-    grid-template-columns: repeat(3,1fr);
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
     column-gap: 3em;
     row-gap: 3em;
     justify-items: center;
 
     ${mediaQueries.mobile} {
+        width: 80vw;
         display: grid;
         grid-template-columns: repeat(2,1fr);
         margin: auto;
@@ -38,7 +41,8 @@ export default function RelatedContentGrid(props) {
                           article_byline={item.article_byline}
                           article_image={item.article_image}
                           article_url={item.article_url}
-                          color={item.color}
+                          color = {item.color}
+                          style = {item.style}
                       />
                       );
                   })

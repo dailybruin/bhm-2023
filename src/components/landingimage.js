@@ -22,8 +22,10 @@ const Credits = styled.div`
   font-size: 20px;
   font-weight: 400;
   color:  #387854;
-  bottom: 1em;
+  bottom: -2em;
   right: 1em;
+  text-transform: uppercase;
+
   ${mediaQueries.mobile} {
     font-size: 8px;
   }

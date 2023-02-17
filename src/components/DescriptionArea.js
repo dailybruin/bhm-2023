@@ -16,9 +16,9 @@ const Container = styled.div `
 const Textbox = styled.div`
     position: relative;
     width: 80vw;
-    margin: auto;
     text-align: center;
     padding: 2em;
+    margin: 3em auto 2em auto;
 
     font-family: 'Poppins', sans-serif;
     font-size: 24px;
@@ -39,6 +39,7 @@ const Title = styled.div`
     font-family: 'Smooch Sans', sans-serif;
     font-size: 90px;
     color: #387854;
+    text-transform: uppercase;
 
     ${mediaQueries.mobile} {
         width: 80vw;
