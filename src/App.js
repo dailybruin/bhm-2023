@@ -20,7 +20,7 @@ function App() {
   return data && (
     <div className="App">
       <Header/>
-      <Landing image={LandingImageTemp} credits={data.landing_credits}/>
+      <Landing image={data.landing_image} credits={data.landing_credits}/>
       <DescriptionText description_text={data.description_text}/>
       <CatalogTitle title = "Stories"/>
       <CatalogTitle title = "Related Content"/>

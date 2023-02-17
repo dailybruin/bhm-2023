@@ -11,7 +11,7 @@ import { mediaQueries } from '../shared/config';
 const Container = styled.div`
 	background-color: #ECE1D3;
 	height: auto;
-	color:#387854;
+	color: #387854;
 
 	padding: 60px 0 10px 0;
     text-align: center;
