@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import RelatedContentGrid from './components/RelatedContentGrid'
 
 function App() {
   const [ data, setData ] = useState(null);
@@ -15,9 +16,9 @@ function App() {
 
   return data && (
     <div className="App">
-      <Header/>
-      Hello Daily Bruin!
-      <Footer/>
+    <Header/>
+    <RelatedContentGrid related={data.related}/>
+    <Footer/>
     </div>
   );
 }
