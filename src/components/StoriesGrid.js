@@ -5,18 +5,20 @@ import ArticleCard from "./ArticleCard";
 
 const Section1 = styled.div`
     position: relative;
-    max-width: 95vw;
+    max-width: 90vw;
     margin: auto;
     display: grid;
     grid-template-areas:
         "card_one card_two"
         "card_one  quote";
     grid-template-columns: .4fr .6fr;
-    column-gap: 1em
+    column-gap: 1em;
+    padding: 2em;
 `
+
 const Section2 = styled.div`
     position: relative;
-    max-width: 95vw;
+    max-width: 90vw;
     margin: auto;
     display: grid;
     grid-template-areas:
@@ -28,10 +30,11 @@ const Section2 = styled.div`
     grid-template-columns: 2fr 1fr 2fr;
     column-gap: 1em;
     row-gap: 1em;
+    padding: 2em;
 `
 const Section3 = styled.div`
     position: relative;
-    max-width: 95vw;
+    max-width: 90vw;
     margin: auto;
     display: grid;
     grid-template-areas:
@@ -39,10 +42,11 @@ const Section3 = styled.div`
     "quote card_one";
     grid-template-columns: .4fr .6fr;
     column-gap: 1em;
+    padding: 2em;
 `
 const Section4 = styled.div`
     position: relative;
-    max-width: 95vw;
+    max-width: 90vw;
     margin: auto;
     display: grid;
     grid-template-areas:
@@ -54,13 +58,15 @@ const Section4 = styled.div`
     grid-template-columns: 2fr 1fr 2fr;
     column-gap: 1em;
     row-gap: 1em;
+    padding: 2em;
 `
+
 const ContainerOne = styled.div`
     grid-area: card_one;
     position: relative;
 `
 const Container1 = styled.div`
-    grid-area: card_1
+    grid-area: card_1;
     position: relative;
 `
 const ContainerTwo = styled.div`
