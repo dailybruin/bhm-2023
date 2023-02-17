@@ -17,7 +17,6 @@ function App() {
   return data && (
     <div className="App">
       <Header/>
-      Hello Daily Bruin!
       <StoriesGrid articles={data.stories}></StoriesGrid>
       <Footer/>
     </div>

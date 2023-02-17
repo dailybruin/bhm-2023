@@ -3,211 +3,270 @@ import styled from 'styled-components'
 import React from 'react';
 import ArticleCard from "./ArticleCard";
 
-const Section1 = styled.div`
-    position: relative;
-    max-width: 95vw;
-    margin: auto;
-    display: grid;
-    grid-template-areas:
-        "card_one card_two"
-        "card_one  quote";
-    grid-template-columns: .4fr .6fr;
-    column-gap: 1em
-`
-const Section3 = styled.div`
-    position: relative;
-    max-width: 95vw;
-    margin: auto;
-    display: grid;
-    grid-template-areas:
-    "card_two card_one"
-    "quote card_one";
-    grid-template-columns: .4fr .6fr;
-    column-gap: 1em;
-`
-const Section2 = styled.div`
-    position: relative;
-    max-width: 95vw;
-    margin: auto;
-    display: grid;
-    grid-template-areas:
-    "card_two card_two card_1"
-    "card_two card_two card_1"
-    "card_one block card_1"
-    "card_one card_2 card_2"
-    "card_one card_2 card_2";
-    grid-template-columns: 2fr 1fr 2fr;
-    column-gap: 1em;
-    row-gap: 1em;
-`
-const Container1 = styled.div`
-    grid-area: card_one;
-    position: relative;
-`
-const Container1_ = styled.div`
-    grid-area: card_1
-    position: relative;
-`
-const Container2 = styled.div`
-    grid-area: card_two;
-    position: relative;
-`
-const Container2_ = styled.div`
-    grid-area: card_2;
-    position: relative;
-`
 const PullQuote = styled.div`
     position: relative;
     grid-area: quote;
-    font-size: 100px;
+    font-size: 3.7vw;
     font-weight: 800;
     color: #387854;
     text-align: left;
     font-family: "Smooch Sans", sans-serif;
 `
- const Block = styled.div`
-    grid-area: block;
-    position: relative;
-    background-color: #D3493D;
- `
 
-export default function StoriesGrid(props){
-    console.log(props.articles);
-    const articles1 = props.articles.slice(0,3);
-    const articles3 = props.articles.slice(7,10);
+const RedBox = styled.div`
+    background-color: #D3493D
+`
 
-    return(
+const GreenBox = styled.div`
+    background-color: #387854
+`
+
+const Grid1 = styled.div`
+margin-top: 10px;
+margin-bottom: 10px;
+margin-left: 10px;
+#page {
+  display: grid;
+  grid-template-areas:
+    "red yellow yellow"
+    "red quote quote";
+  grid-template-rows: 50vh 20vh;
+  grid-template-columns: 38vw 55vw;
+  gap: 10px;
+        ${mediaQueries.mobile} {
+        display: flex;
+        columns: 1;
+        column-width: auto;
+    }
+}
+
+
+#page > .article_0 {
+  grid-area: red;
+background-color: #D3493D;
+}
+
+#page > .article_1 {
+  grid-area: yellow;
+ background-color: #EFB945;
+}
+
+#page > .article_2 {
+  grid-area: quote;
+}
+`
+const Grid2 = styled.div`
+margin-left: 10px;
+margin-bottom: 10px;
+#page {
+  display: grid;
+  grid-template-areas:
+    "green green green yellow yellow"
+    "yellow2 yellow2 empty yellow yellow"
+    "yellow2 yellow2  red red red";
+  grid-template-rows: 50vh 30vh 50vh;
+  grid-template-columns: repeat(5, 19vw);
+  gap: 10px;
+}
+
+#page > .article_0 {
+  grid-area: green;
+  background-color: #387854;
+
+}
+
+#page > .article_1 {
+  grid-area: yellow;
+  background-color: #EFB945;
+}
+
+#page > .article_2 {
+  grid-area: yellow2;
+  background-color: #EFB945;
+}
+
+#page > .article_3 {
+  grid-area: red;
+  background-color: #D3493D;
+}
+`
+const Grid3 = styled.div`
+margin-bottom: 10px;
+#page {
+  display: grid;
+  grid-template-areas:
+    "green green yellow"
+    "quote quote yellow";
+  grid-template-rows: 50vh 20vh;
+  grid-template-columns: 30vw 25vw 42vw;
+  gap: 10px;
+}
+
+#page > .article_0 {
+  grid-area: green;
+ background-color: #387854;
+}
+
+#page > .article_1 {
+  grid-area: quote;
+margin-left: 10px;
+}
+
+#page > .article_2 {
+  grid-area: yellow;
+  background-color: #EFB945;
+}
+`
+const Grid4 = styled.div`
+margin-left: 10px;
+#page {
+  display: grid;
+  grid-template-areas:
+    "yellow yellow green green green"
+    "yellow yellow GreenEmpty red2 red2 "
+    "red red red red2 red2";
+  grid-template-rows: 50vh 30vh 50vh;
+  grid-template-columns: repeat(5, 19vw);
+  gap: 10px;
+}
+
+${mediaQueries.mobile} {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    align - items: center;
+    row - gap: 2em;
+    padding: 0;
+}
+
+#page > .article_0 {
+  grid-area: yellow;
+ background-color: #EFB945;
+}
+
+#page > .article_1 {
+  grid-area: red;
+background-color: #D3493D;
+}
+
+#page > .article_2 {
+  grid-area: red2;
+background-color: #D3493D;
+}
+
+#page > .article_3 {
+  grid-area: green;
+ background-color: #387854;
+}
+`
+
+
+export default function StoriesGrid(props) {
+    
+    const articles1 = props.articles.slice(0, 3);
+    const articles2 = props.articles.slice(3, 7);
+    const articles3 = props.articles.slice(7, 10);
+    const articles4 = props.articles.slice(10, 14);
+
+    return (
         <div>
-        <Section1>
-            {props && props.articles && articles1
-                ? articles1.map((item) => {
-                    if(item.article_title == "quote"){
-                        return(
-                            <PullQuote>
-                                {item.quote_content}
+            <Grid1>
+                <section id="page">
+                {articles1 ? articles1.map((item, index) => {
+                    const articleArea = `article_${index}`;
+                    if (item.article_title == "quote") {
+                        return (
+                            <PullQuote class={articleArea}>
+                                "{item.quote_content}"
                             </PullQuote>
                         )
                     }
-                    else if(item.style == 'one'){
-                        return(
-                            <Container1>
-                                <ArticleCard 
-                                article_title = {item.article_title}
-                                article_image = {item.article_image} 
-                                article_url = {item.article_url}
-                                article_byline = {item.article_byline}
-                                style = {item.style}
-                                float = {item.float}
-                                color = {item.color}
+                    return (
+                        <div class={articleArea}>
+                                <ArticleCard
+                                    article_title={item.article_title}
+                                    
+                                    article_url={item.article_url}
+                                    article_byline={item.article_byline}
+                                    style={item.style}
+                                    color={item.color}
                                 />
-                            </Container1>
-                        )
-                    }
-                    else if(item.style == 'two'){
-                        return(
-                            <Container2>
-                                <ArticleCard 
-                                article_title = {item.article_title}
-                                article_image = {item.article_image} 
-                                article_url = {item.article_url}
-                                article_byline = {item.article_byline}
-                                style = {item.style}
-                                float = {item.float}
-                                color = {item.color}
-                                />
-                            </Container2>
-                        )
-                    }
+                         </div>    
+                    );
                 })
-            : null}
-        </Section1>
-        <Section2>
-            <Container2>
-                <ArticleCard 
-                article_title = {props.articles[3].article_title}
-                article_image = {props.articles[3].article_image}
-                article_byline = {props.articles[3].article_byline}
-                style = {props.articles[3].style}
-                float = {props.articles[3].float}
-                color = {props.articles[3].color}
-                />
-            </Container2>
-            <Container1>
-            <ArticleCard 
-                article_title = {props.articles[4].article_title}
-                article_image = {props.articles[4].article_image}
-                article_byline = {props.articles[4].article_byline}
-                style = {props.articles[4].style}
-                float = {props.articles[4].float}
-                color = {props.articles[4].color}
-                />
-            </Container1>
-            <Container1_>
-            <ArticleCard 
-                article_title = {props.articles[5].article_title}
-                article_image = {props.articles[5].article_image}
-                article_byline = {props.articles[5].article_byline}
-                style = {props.articles[5].style}
-                float = {props.articles[5].float}
-                color = {props.articles[5].color}
-                />
-            </Container1_>
-            <Block></Block>
-            <Container2_>
-            <ArticleCard 
-                article_title = {props.articles[6].article_title}
-                article_image = {props.articles[6].article_image}
-                article_byline = {props.articles[6].article_byline}
-                style = {props.articles[6].style}
-                float = {props.articles[6].float}
-                color = {props.articles[6].color}
-                />
-            </Container2_>  
-        </Section2>
-        <Section3>
-        {props && props.articles && articles1
-                ? articles3.map((item) => {
-                    if(item.article_title == "quote"){
-                        return(
-                            <PullQuote>
-                                {item.quote_content}
-                            </PullQuote>
-                        )
-                    }
-                    else if(item.style == 'one'){
-                        return(
-                            <Container1>
-                                <ArticleCard 
-                                article_title = {item.article_title}
-                                article_image = {item.article_image} 
-                                article_url = {item.article_url}
-                                article_byline = {item.article_byline}
-                                style = {item.style}
-                                float = {item.float}
-                                color = {item.color}
+                        : null}
+                </section>
+            </Grid1>
+            <Grid2>
+                <section id="page">
+                    <RedBox class="empty"/>
+                    {articles2 ? articles2.map((item, index) => {
+                        const articleArea = `article_${index}`;
+                        return (
+                            <div class={articleArea}>
+                                <ArticleCard
+                                    article_title={item.article_title}
+
+                                    article_url={item.article_url}
+                                    article_byline={item.article_byline}
+                                    style={item.style}
+                                    color={item.color}
                                 />
-                            </Container1>
-                        )
-                    }
-                    else if(item.style == 'two'){
-                        return(
-                            <Container2>
-                                <ArticleCard 
-                                article_title = {item.article_title}
-                                article_image = {item.article_image} 
-                                article_url = {item.article_url}
-                                article_byline = {item.article_byline}
-                                style = {item.style}
-                                float = {item.float}
-                                color = {item.color}
+                            </div>
+                        );
+                    })
+                        : null}
+                </section>
+            </Grid2>
+            <Grid3>
+                <section id="page">
+                    {articles3 ? articles3.map((item, index) => {
+                        const articleArea = `article_${index}`;
+                        if (item.article_title == "quote") {
+                            return (
+                                <PullQuote class={articleArea}>
+                                    "{item.quote_content}"
+                                </PullQuote>
+                            )
+                        }
+                        return (
+                            <div class={articleArea}>
+                                <ArticleCard
+                                    article_title={item.article_title}
+
+                                    article_url={item.article_url}
+                                    article_byline={item.article_byline}
+                                    style={item.style}
+                                    color={item.color}
                                 />
-                            </Container2>
-                        )
-                    }
-                })
-            : null}
-        </Section3>
+                            </div>
+                        );
+                    })
+                        : null}
+                </section>
+            </Grid3>
+            <Grid4>
+                <section id="page">
+                    <GreenBox class="GreenEmpty" />
+                    {articles4 ? articles4.map((item, index) => {
+                        const articleArea = `article_${index}`;
+                        return (
+                            <div class={articleArea}>
+                                <ArticleCard
+                                    article_title={item.article_title}
+
+                                    article_url={item.article_url}
+                                    article_byline={item.article_byline}
+                                    style={item.style}
+                                    color={item.color}
+                                />
+                            </div>
+                        );
+                    })
+                        : null}
+                </section>
+            </Grid4>
         </div>
     )
-
 }
