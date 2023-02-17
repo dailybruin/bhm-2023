@@ -11,6 +11,7 @@ let ByLineText = "By";
 let ArticleImage = styled.div``;
 let TitleText = styled.p``;
 let BylineText = styled.p``;
+
 export default function ArticleCard(props) {
   function getBackground(color) {
     if (color == "yellow") {
@@ -23,6 +24,7 @@ export default function ArticleCard(props) {
       return "D3493D";
     }
   }
+
   function getStyle(style) {
     //STYLE ONE
     if (style == "one") {
@@ -41,6 +43,7 @@ export default function ArticleCard(props) {
           width: 80%;
         }
       `;
+
       Image = styled.img`
         display: block;
         width: 100%;
@@ -130,6 +133,7 @@ export default function ArticleCard(props) {
           }
         `;
       }
+
       if (props.float == "left") {
         Container = styled.div`
           position: relative;
@@ -147,6 +151,7 @@ export default function ArticleCard(props) {
           }
         `;
       }
+
       ArticleInfo = styled.div`
         flex: 0.4;
         color: #ffffff;
@@ -252,11 +257,16 @@ export default function ArticleCard(props) {
       `;
     }
   }
+
   getStyle(props.style);
+
   if (props.style == "one") {
     return (
       <Container>
-        <Image src={props.article_image}></Image>
+         <a href={props.article_url}>
+            <Image src={props.article_image}></Image>
+          </a>
+        {/* <Image src={props.article_image}></Image> */}
         <ArticleInfo>
           <Title>
             <TitleText>{props.article_title}</TitleText>
