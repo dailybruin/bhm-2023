@@ -1,7 +1,7 @@
 import { mediaQueries } from '../shared/config';
 import styled from 'styled-components'
 import React from 'react';
-import ArticleCard from "./ArticleCard";
+import ArticleCard from "./ArticleCards";
 
 const Section1 = styled.div`
     position: relative;
@@ -13,7 +13,8 @@ const Section1 = styled.div`
         "card_one  quote";
     grid-template-columns: .4fr .6fr;
     column-gap: 1em;
-    padding: 2em;
+    padding-top: 5em;
+    padding-bottom: 1em;
 `
 
 const Section2 = styled.div`
@@ -30,7 +31,7 @@ const Section2 = styled.div`
     grid-template-columns: 2fr 1fr 2fr;
     column-gap: 1em;
     row-gap: 1em;
-    padding: 2em;
+    padding-bottom: 1em;
 `
 const Section3 = styled.div`
     position: relative;
@@ -40,9 +41,9 @@ const Section3 = styled.div`
     grid-template-areas:
     "card_two card_one"
     "quote card_one";
-    grid-template-columns: .4fr .6fr;
+    grid-template-columns: .6fr .4fr;
     column-gap: 1em;
-    padding: 2em;
+    padding-bottom: 1em;
 `
 const Section4 = styled.div`
     position: relative;
@@ -58,7 +59,7 @@ const Section4 = styled.div`
     grid-template-columns: 2fr 1fr 2fr;
     column-gap: 1em;
     row-gap: 1em;
-    padding: 2em;
+    padding-bottom: 6em;
 `
 
 const ContainerOne = styled.div`

@@ -30,13 +30,11 @@ export default function ArticleCard(props) {
     if (style == "one") {
       Container = styled.div`
         position: relative;
-        max-width: 400px;
         margin: auto;
-        box-sizing: content-box;
+        box-sizing: border-box;;
         background-color: #${getBackground(props.color)};
         height: fit-content;
         padding: 1em;
-        overflow: visible;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
         ${mediaQueries.mobile} {
@@ -69,32 +67,33 @@ export default function ArticleCard(props) {
         }
       `;
 
-      Title = styled.div`
-        flex: 1;
+      Title = styled.a`
+        flex: 2;
         width: 50%;
-        font-size: 5.5vh;
+        font-size: 50px;
         font-weight: 700;
         text-align: left;
-        line-height: 0.7em;
+        line-height: 1em;
         text-decoration: none;
         color: inherit;
         font-family: "Smooch Sans", sans-serif;
+        padding: 0.5em 0 0.5em 0;
       `;
 
-      TitleText = styled.p`
-        justify-content: center;
-        align-items: center;
+      // TitleText = styled.p`
+      //   justify-content: center;
+      //   align-items: center;
 
-        margin-top: 20%;
-        margin-bottom: 10%;
-      `;
+      //   margin-top: 20%;
+      //   margin-bottom: 10%;
+      // `;
 
       ByLine = styled.div`
         flex: 1;
         width: 50%;
         color: inherit;
 
-        font-size: 2vh;
+        font-size: 24px;
         font-weight: 500;
         font-family: "Poppins", sans-serif;
 
@@ -103,15 +102,16 @@ export default function ArticleCard(props) {
 
         margin-top: 5%;
         margin-bottom: 5%;
+        padding: 0.5em 0 0.5em 0;
       `;
 
-      BylineText = styled.p`
-        justify-content: center;
-        align-items: center;
+      // BylineText = styled.p`
+      //   justify-content: center;
+      //   align-items: center;
 
-        margin-left: 40%;
-        height: 100%;
-      `;
+      //   margin-left: 40%;
+      //   height: 100%;
+      // `;
     }
 
     if (style == "two") {
@@ -119,14 +119,11 @@ export default function ArticleCard(props) {
         Container = styled.div`
           position: relative;
           display: flex;
-          flex-direction: row-reverse;
-          width: 744px;
-          height: 320px;
+          height: fit-content;
           margin: auto;
-          box-sizing: content-box;
+          box-sizing: border-box;
           background-color: #${getBackground(props.color)};
           padding: 0.7em;
-          overflow: visible;
           ${mediaQueries.mobile} {
             width: 90%;
             height: 50%;
@@ -138,13 +135,13 @@ export default function ArticleCard(props) {
         Container = styled.div`
           position: relative;
           display: flex;
-          width: 744px;
-          height: 320px;
+          flex-direction: row-reverse;
+          width: 100%;
+          height: fit-content;
           margin: auto;
-          box-sizing: content-box;
+          box-sizing: border-box;
           background-color: #${getBackground(props.color)};
           padding: 0.7em;
-          overflow: visible;
           ${mediaQueries.mobile} {
             width: 90%;
             height: 50%;
@@ -173,11 +170,12 @@ export default function ArticleCard(props) {
 
       Title = styled.a`
         display: block;
-        padding-top: 1em;
-        font-size: 5.5vh;
+        padding: 1em 0.5em 0 0.5em;
+        font-size: 50px;
         font-weight: 600;
         text-align: center;
-        line-height: 60px;
+        text-decoration: none;
+        line-height: 1em;
         color: inherit;
         font-family: "Smooch Sans", sans-serif;
         ${mediaQueries.mobile} {
@@ -187,8 +185,8 @@ export default function ArticleCard(props) {
 
       ByLine = styled.p`
         display: block;
-        font-size: 2vh;
-        font-weight: 300;
+        font-size: 24px;
+        font-weight: 500;
         text-align: center;
         color: inherit;
         font-family: "Poppins", sans-serif;
@@ -196,21 +194,22 @@ export default function ArticleCard(props) {
       `;
     }
     ByLineText = "By\n";
+
     //STYLE THREE
     if (style == "three") {
       Container = styled.div`
         position: relative;
         width: 350px;
-        height: 380px;
+        height: fit-content;
         margin: auto;
         box-sizing: content-box;
         background-color: #${getBackground(props.color)};
         padding: 0.7em;
-        overflow: visible;
         ${mediaQueries.mobile} {
           width: 80%;
         }
       `;
+
       ArticleInfo = styled.div`
         display: block;
         margin: auto;
@@ -218,8 +217,9 @@ export default function ArticleCard(props) {
         line-height: 1em;
         height: 20%;
       `;
+
       ArticleImage = styled.div`
-        position: absolute
+        position: absolute;
         display: block;
         margin: auto;
         height: 80%;
@@ -238,6 +238,7 @@ export default function ArticleCard(props) {
         font-size: 3.5vh;
         font-weight: 600;
         text-align: center;
+        text-decoration: none;
         color: inherit;
         font-family: "Smooch Sans", sans-serif;
 
@@ -268,11 +269,11 @@ export default function ArticleCard(props) {
           </a>
         {/* <Image src={props.article_image}></Image> */}
         <ArticleInfo>
-          <Title>
-            <TitleText>{props.article_title}</TitleText>
+          <Title href={props.article_url}>
+            {props.article_title}
           </Title>
           <ByLine>
-            <BylineText> By {props.article_byline}</BylineText>
+            By {props.article_byline}
           </ByLine>
         </ArticleInfo>
       </Container>
@@ -286,7 +287,7 @@ export default function ArticleCard(props) {
           </a>
         </ArticleImage>
         <ArticleInfo>
-          <Title href={props.article_url}>{props.article_title}</Title>
+          <Title href={props.article_url}> {props.article_title}</Title>
           <ByLine>
             {ByLineText}
             {props.article_byline}
